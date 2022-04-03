@@ -185,6 +185,17 @@ span:hover{
     display: flex;
     flex-direction: column;
 }
+.right{
+    background-color: rgb(52, 184, 52);
+    color: white;
+}
+.wrong{
+    background-color: rgb(148, 32, 32);
+    color: white;
+}
+#login_link{
+    color: blue;
+}
 
 @media (max-width:600px){
     #cont{
