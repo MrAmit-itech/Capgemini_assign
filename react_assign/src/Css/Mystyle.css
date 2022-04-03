@@ -42,6 +42,7 @@ body{
     background-size: cover;
 }
 @media (max-width:600px){
+    
     .bigimg_cont{
         width: 100%;
         /* height: 70%; */
