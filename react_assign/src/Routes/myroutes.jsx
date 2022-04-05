@@ -11,7 +11,7 @@ const Myroutes=()=>{
         <div><Navbar/></div>
         <div>
             <Routes>
-                <Route path="/" element={<Home/>}></Route>
+                <Route path="/" element={<Home/>}> </Route>
                 <Route path="/SignUp" element={<SignUp/>}></Route>
                 <Route path="/Login" element={<Login/>}></Route>
                 <Route path="/About" element={<About/>}></Route>
