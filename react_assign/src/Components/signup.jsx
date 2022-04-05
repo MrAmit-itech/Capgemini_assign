@@ -13,8 +13,9 @@ const SignUp=()=>{
         let condition1 = /[a-z]/g
         let condition2 = /[A-Z]/g
         let condition3 = /[0-9]/g
+        let condition4 = /[@,$,#,%,!,~]/g
  
-        if(condition1.test(pass) && (condition2.test(pass) && (condition3.test(pass)))){
+        if(condition1.test(pass) && (condition2.test(pass) && (condition3.test(pass) && (condition4.test(pass))))){
             setPasswarn(true)
          }else{
             setPasswarn(false)
