@@ -2,6 +2,9 @@
 import {Link} from "react-router-dom"
 import { useState } from "react"
 
+
+
+
 const SignUp=()=>{
     const[data,setData] = useState({})
     const[passwarn,setPasswarn] = useState(null)
