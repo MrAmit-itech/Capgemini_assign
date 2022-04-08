@@ -1,9 +1,22 @@
 {
-    "user_details":[
-        {
-            "id":"1",
-            "name":"amit",
-            "email":"er.itechamit@gmail.com"
-        }
-    ]
+  "user_details": [
+    {
+      "id": "75d5bb33-22e1-44b1-8cbc-3612c203cb92",
+      "name": "amit",
+      "email": "er.@gmail.com",
+      "password": "Qwerty@1",
+      "contact": "1234567890",
+      "city": "varanasai",
+      "address": "up"
+    },
+    {
+      "id": "fcfc9a2b-2dce-4337-8a5f-4d81c9d73938",
+      "name": "sumit",
+      "email": "er.@gmail.com",
+      "password": "Qwerty@1",
+      "contact": "1234567890",
+      "city": "varanasai",
+      "address": "up"
+    }
+  ]
 }

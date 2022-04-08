@@ -1,6 +1,8 @@
 
 import {Link} from "react-router-dom"
 import { useState } from "react"
+import Api from "../Config/axios"
+import {v4 as uuidv4} from "uuid"
 
 
 
@@ -40,11 +42,31 @@ const SignUp=()=>{
             [name]:value
         })
     }
+    const GetAlldataHandler=async()=>{
+        let response = await Api.get("/user_details")
+        response = await response.data
+        console.log('res',response)
+    }
+    const PostdataHandler=async()=>{
+       console.log('i m triggerd')
+        const request = {
+            id:uuidv4(),
+            ...data
+        }
+        let response = await Api.post("/user_details",request)
+        response = await response.data
+        console.log('post respo',response)
+    }
+
     const Handlesubmit=(event)=>{
         event.preventDefault()
         console.log('data is',data)
+        console.log('uuid->',uuidv4())
 
+        PostdataHandler()
+        GetAlldataHandler()
     }
+
 
 
 
