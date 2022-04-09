@@ -270,4 +270,5 @@ span:hover{
 }
 .update_btn{
     color: green;
+    text-decoration: none;
 }

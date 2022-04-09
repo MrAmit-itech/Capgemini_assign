@@ -5,6 +5,7 @@ import Home from "../Components/home"
 import Login from "../Components/login"
 import Navbar from "../Components/navbar"
 import SignUp from "../Components/signup"
+import Update from "../Components/update"
 import Userdetails from "../Components/userdetails"
 
 const Myroutes=()=>{
@@ -18,6 +19,7 @@ const Myroutes=()=>{
                 <Route path="/About" element={<About/>}></Route>
                 <Route path="/Contact" element={<Contact/>}></Route>
                 <Route path="/userdetails" element={<Userdetails/>}></Route>
+                <Route path="/userdetails/update" element={<Update/>}></Route>
             </Routes>
         </div>
     </>

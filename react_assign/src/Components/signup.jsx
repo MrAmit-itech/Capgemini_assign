@@ -61,6 +61,7 @@ const SignUp=()=>{
         event.preventDefault()
         console.log('data is',data)
         console.log('uuid->',uuidv4())
+        // document.getElementById("myform").reset()
 
         PostdataHandler()
     }
@@ -70,7 +71,7 @@ const SignUp=()=>{
 
     return<>
         <div id="cont">
-            <form action="#" onSubmit={Handlesubmit}  >
+            <form id="myform" action="#" onSubmit={Handlesubmit}  >
                 <table>
                     <tbody>
                         <tr>
@@ -98,7 +99,7 @@ const SignUp=()=>{
                             <td><input className="input" onChange={Handlechange} type="text" placeholder="Address" name="address" id="address" required/></td>
                         </tr>
                         <tr>
-                            <td ><input id="btn" type="submit" /></td>
+                            <td ><input id="btn"  type="submit" /></td>
                         </tr>
                         <tr>
                             <td><span>Already have an account?</span><span id="login_link"><Link  to={"/Login"}>Login here</Link></span></td>

@@ -1,53 +1,8 @@
 {
   "user_details": [
     {
-      "id": "2c59cd38-37b2-4ce3-821b-8e9205291ad7",
-      "name": "amit",
-      "email": "er.@gmail.com",
-      "password": "Qwerty@1",
-      "contact": "1234567890",
-      "city": "varanasai",
-      "address": "up"
-    },
-    {
-      "id": "577f22f8-e568-4ec5-93a1-5db3a0587a17",
-      "name": "amit",
-      "email": "er.@gmail.com",
-      "password": "Qwerty@1",
-      "contact": "1234567890",
-      "city": "varanasai",
-      "address": "up"
-    },
-    {
-      "id": "695418b5-3e1a-4b71-b949-356231346dc3",
-      "name": "amit",
-      "email": "er.@gmail.com",
-      "password": "Qwerty@1",
-      "contact": "1234567890",
-      "city": "varanasai",
-      "address": "up"
-    },
-    {
-      "id": "9f394703-f754-4cb6-a68f-7f50c96fb78e",
-      "name": "radhe",
-      "email": "er.@gmail.com",
-      "password": "Qwerty@1",
-      "contact": "1234567890",
-      "city": "varanasai",
-      "address": "up"
-    },
-    {
-      "id": "f9e64a9e-dc27-4cfb-8786-d3bd86b38bac",
-      "name": "radhe shyam",
-      "email": "er.@gmail.com",
-      "password": "Qwerty@1",
-      "contact": "1234567890",
-      "city": "varanasai",
-      "address": "up"
-    },
-    {
-      "id": "fc6c503b-8cdf-43af-90cd-6d8bff89e02b",
-      "name": "radhe shyam",
+      "id": "e13c0f68-966c-4096-8bf0-b8a09bcb29b6",
+      "name": "sohan",
       "email": "er.@gmail.com",
       "password": "Qwerty@1",
       "contact": "1234567890",

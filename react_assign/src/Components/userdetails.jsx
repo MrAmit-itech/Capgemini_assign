@@ -1,5 +1,9 @@
 import Api from "../Config/axios"
 import { useEffect,useState } from "react"
+import {Link} from "react-router-dom"
+import Update from "./update"
+import Context from "./context"
+
 
 
 const Userdetails=()=>{
@@ -18,7 +22,12 @@ const Userdetails=()=>{
     const Removedatahandler=async(id)=>{
         console.log('i m triggered',data)
         await Api.delete(`/user_details/${id}`)
-        GetAlldataHandler()
+        
+        const newdata = data.filter((el)=>(el.id !== id))
+        setData(newdata)
+    }
+    const Handleclick=(id)=>{  
+        
     }
 
 
@@ -37,7 +46,7 @@ const Userdetails=()=>{
                 </div>
                 <div>
                     <span className="del_btn" onClick={()=>Removedatahandler(el.id)}>Delete</span>
-                    <span className="update_btn">Update</span>
+                    <span><Link onClick={()=><Context.Provider value={el.id}><Update/></Context.Provider>} className="update_btn" to={"/userdetails/update"}>update</Link></span>
                 </div>
             </div>
         ))}
@@ -46,3 +55,4 @@ const Userdetails=()=>{
     </>
 }
 export default Userdetails
+export {Context}
