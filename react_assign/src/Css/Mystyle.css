@@ -240,3 +240,34 @@ span:hover{
         padding: 0%;
     }
 }
+
+/* userdetails components css starts here */
+
+.userblock{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 2%;
+    padding: 2%;
+}
+.userblock>div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.userblock>div:nth-child(2){
+    display: flex;
+    align-items:flex-start;
+}
+.userblock>div:nth-child(2)>span{
+    margin: 2%;
+}
+.title{
+    color: black;
+}
+.del_btn{
+    color: rgb(180, 62, 62);
+}
+.update_btn{
+    color: green;
+}

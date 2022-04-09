@@ -11,6 +11,7 @@ const Navbar=()=>{
                 <Link  className="linkstyle" to={"/Signup"}>Signup</Link>
                 <Link  className="linkstyle" to={"/Login"}>Login</Link>
                 <Link  className="linkstyle" to={"/Contact"}>Contact</Link>
+                <Link  className="linkstyle" to={"/userdetails"}>Users</Link>
             </div>
         </div>
         

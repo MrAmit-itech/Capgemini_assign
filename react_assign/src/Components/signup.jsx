@@ -42,13 +42,12 @@ const SignUp=()=>{
             [name]:value
         })
     }
-    const GetAlldataHandler=async()=>{
-        let response = await Api.get("/user_details")
-        response = await response.data
-        console.log('res',response)
-    }
+    // const GetAlldataHandler=async()=>{
+    //     let response = await Api.get("/user_details")
+    //     response = await response.data
+    //     console.log('res',response)
+    // }
     const PostdataHandler=async()=>{
-       console.log('i m triggerd')
         const request = {
             id:uuidv4(),
             ...data
@@ -64,7 +63,6 @@ const SignUp=()=>{
         console.log('uuid->',uuidv4())
 
         PostdataHandler()
-        GetAlldataHandler()
     }
 
 
@@ -105,6 +103,7 @@ const SignUp=()=>{
                         <tr>
                             <td><span>Already have an account?</span><span id="login_link"><Link  to={"/Login"}>Login here</Link></span></td>
                         </tr>
+        
                     </tbody>
                 </table>
             </form>
