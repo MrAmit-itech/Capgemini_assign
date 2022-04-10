@@ -1,8 +1,9 @@
 import Api from "../Config/axios"
-import { useEffect,useState } from "react"
+import { useContext, useEffect,useState } from "react"
 import {Link} from "react-router-dom"
 import Update from "./update"
 import Context from "./context"
+import { IdContext } from "../Context/Id"
 
 
 
@@ -26,8 +27,10 @@ const Userdetails=()=>{
         const newdata = data.filter((el)=>(el.id !== id))
         setData(newdata)
     }
+
+    const {setId} = useContext(IdContext)
     const Handleclick=(id)=>{  
-        
+        setId(id)
     }
 
 
@@ -46,7 +49,7 @@ const Userdetails=()=>{
                 </div>
                 <div>
                     <span className="del_btn" onClick={()=>Removedatahandler(el.id)}>Delete</span>
-                    <span><Link onClick={()=><Context.Provider value={el.id}><Update/></Context.Provider>} className="update_btn" to={"/userdetails/update"}>update</Link></span>
+                    <span><Link onClick={()=>{Handleclick(el.id)}} className="update_btn" to={"/userdetails/update"}>update</Link></span>
                 </div>
             </div>
         ))}

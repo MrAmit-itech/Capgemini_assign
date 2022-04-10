@@ -9,6 +9,7 @@ import {v4 as uuidv4} from "uuid"
 
 const SignUp=()=>{
     const[data,setData] = useState({})
+    const[warn,setWarn] = useState(false)
     const[passwarn,setPasswarn] = useState(null)
     const[contact_len,setContact_len] = useState(null)
 
@@ -53,6 +54,9 @@ const SignUp=()=>{
             ...data
         }
         let response = await Api.post("/user_details",request)
+        if(response.status === 201){
+            setWarn(true)
+        }
         response = await response.data
         console.log('post respo',response)
     }
@@ -100,6 +104,9 @@ const SignUp=()=>{
                         </tr>
                         <tr>
                             <td ><input id="btn"  type="submit" /></td>
+                        </tr>
+                        <tr>
+                            {warn?<span style={{color:"green"}}>data submitted successfully</span>:null}
                         </tr>
                         <tr>
                             <td><span>Already have an account?</span><span id="login_link"><Link  to={"/Login"}>Login here</Link></span></td>

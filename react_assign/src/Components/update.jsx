@@ -1,15 +1,17 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext,  useState } from "react"
 import Api from "../Config/axios"
-import Context from "./context"
+import { IdContext } from "../Context/Id"
+
 
 
 const Update=()=>{
-    const value = useContext(Context)
     const [data,setData] = useState(null)
+    const [warn,setWarn] = useState(false)
+    const {Id} = useContext(IdContext)
 
-    useEffect(()=>{
-        console.log('value',value,Context)
-    },[])
+    // useEffect(()=>{
+    //     console.log('id',Id)
+    // },[])
 
     const Handlechange=(e)=>{
         const{name,value} = e.target
@@ -20,7 +22,11 @@ const Update=()=>{
         
     }
     const UpdateDataHandler=async()=>{
-        await Api.put(`/user_details/${data.id}`)
+        const response = await Api.put(`/user_details/${Id}`,data)
+        console.log('respo',response.data)
+        if(response.status === 200){
+            setWarn(true)
+        }
     }
 
 
@@ -28,7 +34,7 @@ const Update=()=>{
 
     const Handlesubmit=(event)=>{
         event.preventDefault()
-        console.log(data)
+        UpdateDataHandler()
 
     }
 
@@ -45,6 +51,9 @@ const Update=()=>{
                     </tr>
                     <tr>
                         <td><input type="submit" name="" id="" /></td>
+                    </tr>
+                    <tr>
+                        {warn?<span style={{color:"green"}}>data updated succesfully</span>:null}
                     </tr>
                 </tbody>
             </table>
