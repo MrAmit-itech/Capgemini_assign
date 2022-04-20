@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing the click function 1`] = `
+<div>
+  this is the login page
+  <button>
+    my_button
+  </button>
+</div>
+`;
