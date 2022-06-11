@@ -16,8 +16,9 @@ export const Login=()=>{
     const email_ref = useRef() 
 
     useEffect(()=>{
-        if(JSON.parse(window.localStorage.getItem('user_detail') === null)){
-            window.localStorage.setItem('user_detail',JSON.stringify([]))
+        if(JSON.parse(localStorage.getItem('user_detail') === null)){
+            var arr = []
+            localStorage.setItem('user_detail',JSON.stringify(arr))
         }
     },[])
 
@@ -33,7 +34,7 @@ export const Login=()=>{
                 email:email_ref.current.value
             }
         )
-        console.log('handlechange->',data)
+        // console.log('handlechange->',data)
     }
 
 
@@ -45,20 +46,20 @@ export const Login=()=>{
             const condition1 = /^[a-z0-9]+$/i
             if(condition1.test(value)){
                 setFlag_username(true)
-                console.log('username is valid')
+                // console.log('username is valid')
             }else if(value){
                 setFlag_username(false)
-                console.log('username invalid=>',value)
+                // console.log('username invalid=>',value)
             }
         }
         if(name === 'address'){
             const condition2 = /^[#.0-9a-zA-Z\s,-]+$/g
             if(condition2.test(value)){
                 setFlag_address(true)
-                console.log('address is valid')
+                // console.log('address is valid')
             }else if(value){
                 setFlag_address(false)
-                console.log('address is invalid')
+                // console.log('address is invalid')
             }
         }
         if(name === 'email'){
@@ -67,10 +68,10 @@ export const Login=()=>{
 
             if(condition3.test(value)){
                 setFlag_Email(true)
-                console.log('email is valid')
+                // console.log('email is valid')
             }else if(value){
                 setFlag_Email(false)
-                console.log('email is invalid')
+                // console.log('email is invalid')
             }
         }
     }
@@ -80,10 +81,9 @@ export const Login=()=>{
     const HandleSubmit=(event)=>{
         event.preventDefault()
 
-        let arr = JSON.parse(window.localStorage.getItem('user_detail' || []))
-        console.log('arr',arr,typeof(arr))
-        let new_arr = arr.push(data)
-        localStorage.setItem('user_detail',JSON.stringify(new_arr))
+        let arr = JSON.parse(localStorage.getItem('user_detail'))
+        arr.push(data)
+        localStorage.setItem('user_detail',JSON.stringify(arr))
         
         
         console.log('submitted data',data)
