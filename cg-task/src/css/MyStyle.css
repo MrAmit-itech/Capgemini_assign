@@ -1,0 +1,18 @@
+body{
+    padding: 10%;
+}
+.valid{
+    padding: 0px 3px 0px 3px;
+    background-color: rgb(41, 152, 41);
+    color: white;
+    
+}
+.invalid{
+    padding: 0px 3px 0px 3px;
+    background-color: rgb(208, 53, 53);
+    color: white;
+    
+}
+td{
+    text-align: left;
+}
