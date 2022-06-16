@@ -1,11 +1,8 @@
-import { Login } from "./login"
-import { Details } from "./details"
 
-export const Homepage=()=>{
+export const HomePage=()=>{
     return<>
-        <div className="comp">
-            <Login/>,
-            {/* <Details/>       */}
+        <div id="home">
+            this is homePage
         </div>
     </>
 }

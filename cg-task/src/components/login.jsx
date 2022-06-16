@@ -1,11 +1,14 @@
 import { useEffect } from "react"
 import { useRef, useState } from "react"
+import {  useNavigate } from "react-router-dom"
 import "../css/MyStyle.css"
 
 export const Login=()=>{
+    let navigate = useNavigate()
 
     const [data,setData] = useState(null)
 
+    //use camel case below
     const [flag_username,setFlag_username] = useState(null)
     const [flag_address,setFlag_address] = useState(null)
     const [flag_email,setFlag_Email] = useState(null)
@@ -22,9 +25,6 @@ export const Login=()=>{
         }
     },[])
 
-    
-
-    
     const HandleChange=()=>{
         
         setData(
@@ -77,36 +77,42 @@ export const Login=()=>{
     }
 
     
-    
-    const HandleSubmit=(event)=>{
-        event.preventDefault()
-
+    const StoreData=()=>{   
         let arr = JSON.parse(localStorage.getItem('user_detail'))
         arr.push(data)
         localStorage.setItem('user_detail',JSON.stringify(arr))
-        
-        
         console.log('submitted data',data)
+    }
 
-
-
-        
+    const AlertMsg=()=>{
         let time = 4
-        const Alert=()=>{
+        const DisplayAlert=()=>{
             let h4 = document.createElement("h4")
+            // h4.setAttribute("id","submit")
             h4 = `data submitted successfully will redirect to next page in ${time} secs`
-            document.getElementById('alert').innerText = h4
-
+            document.getElementById('alert').textContent = h4
+    
             if(time === 0){
+                navigate("/details")
                 clearInterval(timer)
             }
             time--
         }
-        if(time === 0){
-            window.location.href = <details/>
-        }
+        const timer = setInterval(DisplayAlert,1000)
+    }
+    
+    const HandleSubmit=(event)=>{
+        event.preventDefault()
 
-        const timer = setInterval(Alert,1000)
+        if(flag_address && flag_email && flag_username){
+            // console.log('all are true')
+            StoreData()
+            AlertMsg()
+        }else{
+            window.alert('Please enter correct data')
+            // console.log('something is gojng wrong')
+        }
+        
     }
 
     return<>
@@ -130,10 +136,10 @@ export const Login=()=>{
                             <tr>
                                 <td>Email</td>
                                 <td><input ref={email_ref} onChange={HandleChange} onBlur={HandleBlur} placeholder="enter email" required type="email" name="email" id="" /></td>
-                                <td>{flag_email ? <span className="valid">email is valid</span> : flag_email === false ? <span className="invalid">email is invalid</span>:null}</td>
+                                <td>{flag_email ? <span className="valid">email is valid</span> : flag_email === false ? <span className="invalid">Email is invalid</span>:null}</td>
                             </tr>
                             <tr>
-                                <td><input type="submit" name="" id="" /></td>
+                                <td><input type="submit"  /></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -144,6 +150,5 @@ export const Login=()=>{
                 </fieldset>
             </form>
         </div>
-        {console.log('rendering display')}
     </>
 }

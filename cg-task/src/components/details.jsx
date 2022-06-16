@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import {  useState } from "react"
 
 export const Details=()=>{
     const [data,setData] = useState({})
@@ -43,11 +43,11 @@ export const Details=()=>{
                                 <th>Select Gender</th>
                             </tr>
                             <tr>
-                                <td><input type="radio" onChange={HandleGender} name="gender" id="female"  value={"Female"}/></td>
+                                <td><input type="radio" onChange={HandleGender} name="gender" id="female"  value="F"/></td>
                                 <td>Female</td>
                             </tr>
                             <tr>
-                                <td><input type="radio" onChange={HandleGender} name="gender" id="male" value={"Male"}/></td>
+                                <td><input type="radio" onChange={HandleGender} name="gender" id="male" value="M"/></td>
                                 <td>Male</td>
                             </tr>
                             <tr>
